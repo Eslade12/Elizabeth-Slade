@@ -1,3 +1,2 @@
 # hello!
-fart
-For our project
+for our project
