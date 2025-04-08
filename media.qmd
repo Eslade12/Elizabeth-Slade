@@ -1,0 +1,29 @@
+---
+title: "Social media and teens"
+author: "Caroline Alexander and Elizabeth Slade"
+format: revealjs
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+# include: FALSE
+
+library(tidyverse)
+YRBS <- read_csv( "yrbs.csv" )
+```
+
+## intro
+
+- a first poimt
+- another point
+- amd the big finsih
+
+## a visualization
+
+```{r}
+# make your bar chart here
+```
+
+
+
