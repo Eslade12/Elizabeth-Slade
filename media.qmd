@@ -23,6 +23,9 @@ YRBS <- read_csv( "yrbs.csv" )
 
 ```{r}
 # make your bar chart here
+ggplot(YRBS) +
+  geom_bar(aes( q80 )) +
+  coord_flip()
 ```
 
 
