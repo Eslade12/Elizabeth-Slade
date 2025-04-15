@@ -1,5 +1,5 @@
 ---
-title: "Social media and teens"
+title: "Social Media and Teens"
 author: "Caroline Alexander and Elizabeth Slade"
 format: revealjs
 editor_options: 
@@ -13,20 +13,42 @@ library(tidyverse)
 YRBS <- read_csv( "yrbs.csv" )
 ```
 
-## intro
+## Introduction
 
-- a first poimt
-- another point
-- amd the big finsih
+- How often do teens use social media?
+- How does social media affect teens? 
+- 
 
-## a visualization
+## How often do you use social media?
 
 ```{r}
 # make your bar chart here
-ggplot(YRBS) +
+social_media <- YRBS |>
+  select( q80 ) |>
+  drop_na( q80 ) |> 
+  mutate( q80 = as.character(q80) ) |> 
+  mutate( q80 = case_when( q80 == "1" ~ "I do not use social media",
+                           q80 == "2" ~ "A few times a month", q80 == "3" ~ "About once a week", q80 == "4" ~ "A few times a week", q80 == "5" ~ "About once a day", q80 == "6" ~ "Several times a day", q80 == "7" ~ "About once an hour", q80 == "8" ~ "More than once an hour" )) |>
+  mutate( q80 = factor( q80, 
+                        levels = c( "I do not use social media", "A few times a month", "About once a week", "A few times a week", "About once a day", "Several times a day", "About once an hour", "More than once an hour")))
+
+ggplot(social_media) +
   geom_bar(aes( q80 )) +
-  coord_flip()
+  coord_flip() +
+  labs( x = " ", y = "Number of Responses")
+
 ```
+
+## During the past 12 months, have you ever been electronically bullied? 
+
+```{r}
+# make your bar chart here 
+ggplot(YRBS) +
+  geom_bar(aes( q25 )) +
+  coord_flip() +
+  labs( x = "Yes                                                No", y = "Number of Responses")
+```
+
 
 
 
