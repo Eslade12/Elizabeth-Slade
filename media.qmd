@@ -10,6 +10,7 @@ editor_options:
 # include: FALSE
 
 library(tidyverse)
+library(tinytable)
 YRBS <- read_csv( "yrbs.csv" )
 ```
 
@@ -39,6 +40,21 @@ ggplot(social_media) +
 
 ```
 
+## How often do you use social media?
+
+```{r}
+
+social_media |>
+  group_by( q80 ) |>
+  count( name = "N" ) |>
+  mutate( Total = nrow( social_media ), 
+          Percent = 100*N/Total ) |>
+  rename( " " = q80 ) |>
+  tt( digits = 3 )
+
+```
+
+
 ## During the past 12 months, have you ever been electronically bullied? 
 
 ```{r}
@@ -47,6 +63,15 @@ ggplot(YRBS) +
   geom_bar(aes( q25 )) +
   coord_flip() +
   labs( x = "Yes                                                No", y = "Number of Responses")
+```
+
+## Table 
+
+```{r}
+# make a table 
+
+tibble::tibble( )
+
 ```
 
 
