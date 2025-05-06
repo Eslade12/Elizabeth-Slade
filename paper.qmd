@@ -1,0 +1,17 @@
+---
+title: "Elizabeth Project"
+author: "Elizabeth and Caroline"
+format: html
+---
+
+## Introduction
+
+There are teens out there as young as 13 who have full access to social media. The Annie E. foundation did a study on social media in relation to teenagers. The study was conducted in 2023. They found that a lot of teens and tweens feel the need to use social media because of the risk of being left out. Social media opens up a window for cyberbullying. A lot of people find it easier to say things behind a screen because it's better than facing the confrontation in person. Especially when kids are at this young of an age who are too immature to think through these things. There are 41% of teens and tweens that say they experience mental health issues from social media. Social media creates an unsafe space for children to be exposed to things their young minds aren't ready for. Teens have also experienced positive effects from social media like having their confidence boosted or finding it easier to communicate with friends. We also found it encourages better social skills. 
+
+## Body
+When researching whether or not teens actually overuse social media we found a study that was conducted by the pew research center. One of the questions they asked was how often teens use social media. The answer choices ranged from as often as more than once an hour to as little as about once a week. The most common response was several times a day with a little under 6000 teens saying that they often use social media. The one with the least amount of responses was once a week with around 300 responses reporting that's how often they use social media. The limitation to this research would be whether or not the students are telling the truth when taking the survey. This is a limitation that is something that would be tough to fix because there is no way to hold students accountable for whether or not they tell the truth on an assignment. 
+  When looking at what states have the most use of social media among teens. We found that for females the most data comes from the middle region of the us.For males the numbers were lower as a whole but it was still pretty centralized. When we orgianlly started conducting our research we expected to find that california would be have the most use of social media due to them being pretty much a captial for influencers. The data however eas missing for California. Although it would have been interesting to see what numbers they would report. 
+    In conclusion thorughout our research we found that females use social media more frequently then males do. We also found that there is not as much cyber bullying online as expected or some students aren't being fully truthful about it. Researching this topic was tough with the lack of data supporting it but from what we found my perspective definitley dud change. 
+
+
+```{r}
