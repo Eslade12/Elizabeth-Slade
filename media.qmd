@@ -16,9 +16,9 @@ YRBS <- read_csv( "yrbs.csv" )
 
 ## Introduction
 
-- How often do teens use social media?
-- How does social media affect teens? 
-- 
+- What are we researching?
+- What are the positive effects of social media?
+- What are the negative effects of social media?
 
 ## How often do you use social media?
 
@@ -65,15 +65,53 @@ ggplot(YRBS) +
   labs( x = "Yes                                                No", y = "Number of Responses")
 ```
 
-## Table 
+## Cyber bullying in the US
 
 ```{r}
-# make a table 
-
-tibble::tibble( )
-
+state_data <- read_csv( "YRBS_All_Locations_Table.csv")
 ```
 
+```{r}
+library( sf )
+library( geodata )
+library( tmap )
+
+tmap_options( basemap.server = "OpenStreetMap")
+tmap_mode("plot")
+
+us <- gadm( "USA", level = 1, path = getwd() )
+us <- st_as_sf( us ) |>
+  filter( NAME_1 != "Alaska", NAME_1 != "Hawaii" )
+
+us <- left_join( us, 
+                 state_data |>
+                   filter( Stratification == "Total", Survey == "State" ) |>
+                   rename( NAME_1 =  LocationDesc) |> 
+                   select( NAME_1, Total = DataValue )) |>
+  left_join( state_data |>
+                   filter( Stratification == "Male", Survey == "State" ) |>
+                   rename( NAME_1 =  LocationDesc) |> 
+                   select( NAME_1, Male = DataValue ) ) |>
+  left_join( state_data |>
+                   filter( Stratification == "Female", Survey == "State" ) |>
+                   rename( NAME_1 =  LocationDesc) |> 
+                   select( NAME_1, Female = DataValue ) )
+
+tm_shape( us ) +
+  tm_polygons( id = "NAME_1", 
+               fill = "Total", 
+               fill.scale = tm_scale_intervals( n = 5, style = "jenks" ) )
+
+tm_shape( us ) +
+  tm_polygons( id = "NAME_1",
+               fill = c("Female","Male"),
+               fill.scale = tm_scale_intervals( n = 5, style = "jenks" ) )
+```
+
+## Conclusion 
+- There is a lower cyber bullying rate than expected 
+- If we were to continue our research we would want to look into what can be done to prevent cyber bullying
+- As social media gets normalized for younger and younger kids its important to continue to monitor these stats. 
 
 
 
